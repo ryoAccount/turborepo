@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Card } from "ui";
-import styles from "./page.module.css";
+import styles from "../css/home.module.css";
 
 function Gradient({
   conic,
@@ -27,9 +27,15 @@ function Gradient({
 
 const LINKS = [
   {
-    title: "Docs",
-    href: "https://turbo.build/repo/docs",
-    description: "Find in-depth information about Turborepo features and API.",
+    title: "Works",
+    href: "./works",
+    description: "Here is a link on the website I created. It is never a high quality item",
+  },
+  {
+    title: "Blog",
+    href: "https://blog-ryocv.vercel.app/",
+    description: "Monologue | This is a blog where I tweet when busy",
+    target: "_blank"
   },
   {
     title: "Learn",
@@ -125,8 +131,8 @@ export default function Page(): JSX.Element {
       </div>
 
       <div className={styles.grid}>
-        {LINKS.map(({ title, href, description }) => (
-          <Card className={styles.card} href={href} key={title} title={title}>
+        {LINKS.map(({ title, href, description, target }) => (
+          <Card className={styles.card} href={href} key={title} target={target} title={title}>
             {description}
           </Card>
         ))}
